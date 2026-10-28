@@ -10,7 +10,8 @@ public class Main {
         List<Route> routes = DemoData.routes();
         List<RouteStrategy> strategies = List.of(
                 new FastestRouteStrategy(), new CheapestRouteStrategy(),
-                new EcoFriendlyRouteStrategy(), new BalancedRouteStrategy(0.4, 0.3, 0.1, 0.2));
+                new EcoFriendlyRouteStrategy(), new BalancedRouteStrategy(0.4, 0.3, 0.1, 0.2),
+                new DistanceFirstStrategy());
         DeliveryRequest request = new DeliveryRequest(DeliveryPriority.STANDARD, 6000, 60, false);
         RoutePlanner planner = new RoutePlanner(strategies.get(0));
 
